@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Toggle Project</title>
+    <style>
+        body {
+            transition: background-color 0.5s;
+            gap: 20px;
+            font-family: sans-serif;
+        }
+
+        #switch_section {
+            float: right;
+        }
+
+        main {
+            border: 2px solid rgb(52, 161, 188);
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #img_section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<h1 style="color: black;">LIGHT THEME</h1>
+
+
+<body>
+
+    <header id="change_text">
+
+    </header>
+
+    <main>
+
+        <section>
+            <div id="switch_section">
+                Dark mode: <button id="colorToggleButton">On</button>
+
+            </div>
+        </section>
+
+        <head>
+            <h1>Animals</h1>
+        </head>
+
+        <h3>Tiger</h3>
+
+        <h5>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi tempore, distinctio porro.</p>
+        </h5>
+
+        <b>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dolor corporis nostrum quae rerum fugit
+                totam sequi labore laboriosam atque? Architecto deserunt nam, quae natus consequuntur laborum earum
+                vitae
+                illo.
+            </p>
+        </b>
+        <div id="img_section">
+            <img src="tiger.png" alt="">
+        </div>
+        <b>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi non vel est tempora provident ratione
+                quos
+                odio voluptatem corporis ipsa placeat quo eius delectus numquam, ex, debitis sint nesciunt
+                necessitatibus!
+            </p>
+        </b>
+    </main>
+
+</body>
+
+<script>
+    var colorToggleButton = document.getElementById('colorToggleButton');
+    var isColorChanged = false;
+
+    colorToggleButton.addEventListener('click', function () {
+        document.body.style.backgroundColor = isColorChanged ? '' : 'black';
+        document.body.style.color = isColorChanged ? 'black' : 'white';
+        colorToggleButton.innerText = isColorChanged ? 'On' : 'Off';
+        document.querySelector('h1').style.color = isColorChanged ? 'black' : 'white';
+        document.querySelector('h1').innerText = isColorChanged ? 'LIGHT THEME' : 'BLACK THEME';
+        isColorChanged = !isColorChanged;
+    });
+</script>
+
+</html>
